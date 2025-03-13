@@ -51,7 +51,7 @@ export default function RootLayout({
                   Pricing
                 </a>
                 <a
-                  href="#contact"
+                  href="/contact"
                   className="text-gray-600 hover:text-gray-900"
                 >
                   Contact
