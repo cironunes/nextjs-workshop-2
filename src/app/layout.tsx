@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +28,142 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* Navigation */}
+        <nav className="fixed w-full bg-white/80 backdrop-blur-sm z-50 border-b border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between h-16 items-center">
+              <div className="flex-shrink-0">
+                <Link href="/" className="text-2xl font-bold text-indigo-600">
+                  SaaSLogo
+                </Link>
+              </div>
+              <div className="hidden md:flex items-center space-x-8">
+                <a
+                  href="#features"
+                  className="text-gray-600 hover:text-gray-900"
+                >
+                  Features
+                </a>
+                <a
+                  href="/pricing"
+                  className="text-gray-600 hover:text-gray-900"
+                >
+                  Pricing
+                </a>
+                <a
+                  href="#contact"
+                  className="text-gray-600 hover:text-gray-900"
+                >
+                  Contact
+                </a>
+                <button className="bg-indigo-600 text-white px-6 py-2 rounded-full hover:bg-indigo-700 transition-colors">
+                  Get Started
+                </button>
+              </div>
+            </div>
+          </div>
+        </nav>
+
         {children}
+
+        {/* Footer */}
+        <footer className="bg-gray-50 border-t border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              <div>
+                <h3 className="text-sm font-semibold text-gray-900 mb-4">
+                  Product
+                </h3>
+                <ul className="space-y-3">
+                  <li>
+                    <a href="#" className="text-gray-600 hover:text-gray-900">
+                      Features
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="text-gray-600 hover:text-gray-900">
+                      Pricing
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="text-gray-600 hover:text-gray-900">
+                      Security
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-gray-900 mb-4">
+                  Company
+                </h3>
+                <ul className="space-y-3">
+                  <li>
+                    <a href="#" className="text-gray-600 hover:text-gray-900">
+                      About
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="text-gray-600 hover:text-gray-900">
+                      Blog
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="text-gray-600 hover:text-gray-900">
+                      Careers
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-gray-900 mb-4">
+                  Resources
+                </h3>
+                <ul className="space-y-3">
+                  <li>
+                    <a href="#" className="text-gray-600 hover:text-gray-900">
+                      Documentation
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="text-gray-600 hover:text-gray-900">
+                      Help Center
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="text-gray-600 hover:text-gray-900">
+                      Contact
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-gray-900 mb-4">
+                  Legal
+                </h3>
+                <ul className="space-y-3">
+                  <li>
+                    <a href="#" className="text-gray-600 hover:text-gray-900">
+                      Privacy
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="text-gray-600 hover:text-gray-900">
+                      Terms
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="text-gray-600 hover:text-gray-900">
+                      Cookie Policy
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="mt-12 pt-8 border-t border-gray-100 text-center text-gray-600">
+              <p>© 2024 Your SaaS Company. All rights reserved.</p>
+            </div>
+          </div>
+        </footer>
       </body>
     </html>
   );
